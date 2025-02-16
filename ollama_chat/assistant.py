@@ -29,7 +29,8 @@ class Assistant():
         return model_names
     
     def add_system_message(self, input_text):
-        self.system_messages.append([{'role': 'system', 'content': input_text}])
+        self.system_messages.append({'role': 'system', 'content': input_text})
 
     def get_system_messages(self) -> list[str]:
         return self.system_messages
+    
