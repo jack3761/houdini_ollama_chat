@@ -15,8 +15,8 @@ class OllamaChatAssistantGUI(QtWidgets.QDialog):
         self.model_combobox = QComboBox()
         self.populate_models()
 
-        self.chat_display = QTextEdit()
-        self.chat_display.setReadOnly(True)
+        self.chat_display = QTextBrowser()
+        # self.chat_display.setReadOnly(True)
 
         self.input_field = QLineEdit()
         self.input_field.setPlaceholderText("Type a message...")
