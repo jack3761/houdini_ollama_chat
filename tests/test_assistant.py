@@ -30,3 +30,15 @@ def test_get_system_messages(assistant):
     assert len(system_messages) == 2
     assert system_messages[0]['content'] == "System message 1"
     assert system_messages[1]['content'] == "System message 2"
+
+
+def test_set_history_length(assistant):
+    pass
+
+def test_export_chat(assistant):
+    pass
+
+def test_load_chat(assistant):
+    pass
+def test_clear_chat(assistant):
+    pass

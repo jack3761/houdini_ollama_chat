@@ -24,11 +24,17 @@ class Assistant():
 
         input_messages = self.system_messages + self.message_history
         print(input_messages)
-        response: ChatResponse = chat(model, messages=input_messages)
+        response: ChatResponse = chat(model, messages=input_messages, stream=True)
 
-        self.message_history.append({"role": "assistant", "content": response.message.content})
+        full_response = ""
+        for chunk in response:
+            text = chunk['message']['content']
+            full_response += text
+            yield text
 
-        return response.message.content
+        self.message_history.append({"role": "assistant", "content": full_response})
+
+        return full_response
 
     def get_available_models(self) -> list[str]:
         available_models = models()
