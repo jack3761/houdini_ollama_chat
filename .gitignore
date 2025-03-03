@@ -11,6 +11,8 @@ venv/
 # Ignore IDE/project-specific files
 .vscode/
 .idea/
+.qodo/
+*.tmp
 
 # Ignore log files
 *.log
